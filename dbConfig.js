@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const {Pool} = require("pg");
+let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -30,7 +31,7 @@ const pool = new Pool({
     },
   });
 
-  
+
   async function getPgVersion() {
     const client = await pool.connect();
     try {
