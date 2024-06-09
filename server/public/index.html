@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Tree</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js" integrity="sha512-11t8Q+vY9JlCrr+PveZKTYJq8n7O09Y5X/pk/aMd3vJugSvu4xOunGEUzaADqL3I8cZKE/pBwwCfXzDkRJh2sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <!-- make a form the user fills out to join chatroom with a name -->
+    <form class="form-join">
+        <input type="text" id="name" minlength="5" maxlength="15" placeholder="Enter TagName" size="20" required>
+        <br>
+        <label for="room">Choose common room to Enter</label>
+        <select name="room" id="room" required>
+            <option value="English">English</option>
+            <option value="Hebrew">Hebrew</option>
+            <option value="Spanish">Spanish</option>
+        </select>
+        <!-- <input type="text" id="room" placeholder="Chat room" size="5" required> -->
+            <button id="join" type="submit">Enter Common Room</button>
+
+    </form>
+
+
+
+    <ul class="chat-display"></ul>
+
+    <!-- userList -->
+    <p class="user-list"></p>
+
+    <p class="room-list"></p>
+
+    <p class="activity"></p>
+
+
+    <!-- input box where they can type a message and then send it with button -->
+    <form class="form-message">
+        <input type="text" id="message" placeholder="type something" required>
+        <button type="submit">
+            Send
+        </button>
+    </form>
+    
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
