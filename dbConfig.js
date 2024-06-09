@@ -29,7 +29,12 @@ const pool = new Pool({
     ssl: {
       require: true,
     },
-  });
+    connection: {
+    options: `project=${process.env.ENDPOINT_ID}`,
+  },
+    connectionTimeoutMillis: 2000, // 2 seconds
+});
+ 
 
 
   async function getPgVersion() {
