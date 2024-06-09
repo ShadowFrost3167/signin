@@ -11,7 +11,7 @@ const pool = new Pool({
     ssl: isProduction ? { rejectUnauthorized: false } : false,
     idleTimeoutMillis: 30000, // 30 seconds
     connection: {
-    options: `project=${ENDPOINT_ID}`,
+    options: `project=${process.env.ENDPOINT_ID}`,
   },
     connectionTimeoutMillis: 2000, // 2 seconds
 });
