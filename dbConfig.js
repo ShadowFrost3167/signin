@@ -10,6 +10,9 @@ const pool = new Pool({
     connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
     ssl: isProduction ? { rejectUnauthorized: false } : false,
     idleTimeoutMillis: 30000, // 30 seconds
+    connection: {
+    options: `project=${ENDPOINT_ID}`,
+  },
     connectionTimeoutMillis: 2000, // 2 seconds
 });
 
